@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 async function connectToMonogoDB() {
-  const mongourl = ;
+  const mongourl = 
   mongoose
     .connect(mongourl)
     .then(() => {

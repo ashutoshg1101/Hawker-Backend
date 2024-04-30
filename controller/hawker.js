@@ -62,4 +62,22 @@ async function handleHawkerDetails(req,res)
         console.log("Error : handleHawkerDetails"+e);
     }
 }
-module.exports = {handleCreateUser,handleUserLogin,handleHawkerDetails}
+
+async function handleHawkerDetailsById(req,res)
+{
+    const {createdBy} = req.body;
+    try{
+
+        const user = await hawkerModel.findById(createdBy);
+        if(user)
+        {
+            res.json(user);
+        }
+    }
+    catch(e)
+    {
+        console.log("Error : handleHawkerDetails"+e);
+    }
+}
+
+module.exports = {handleCreateUser,handleUserLogin,handleHawkerDetails,handleHawkerDetailsById}
